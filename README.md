@@ -8,7 +8,8 @@ Features Computed:
 - Integrated OFI: A compressed 1D signal obtained via PCA on normalized multi-level OFIs.<br>
 
 All features are aggregated over non-overlapping 1-minute windows.<br>
-<b>Note:</b> Cross-Asset OFI can not be calculated here as there is only one instrument in this dataset.
+<b>Note 1:</b> Cross-Asset OFI can not be calculated here as there is only one instrument in this dataset.<br>
+<b>Note 2:</b> See Exploration.ipynb to see the notebook containing analysis and usage of OFI features.
 
 <b>Usage:</b>
 ```bash
