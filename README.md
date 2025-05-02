@@ -23,7 +23,10 @@ Dependencies: See requirements.txt for necessary packages
 Here are some key observations, potential data inconsistencies, assumptions, and cleaning decisions for this task:
 
 * There are gaps in sequence numbers. These gaps were assumed non-informative and do not compromise OFI computation. However, a few inconsistencies in the data were observed as given below
-* Book state inconsistencies examples: At index 7 - A new order at book level 1 should push down the other levels, however, the price at level 2 was removed instead of appearing at level 3; At index 267 - a new best bid level was added whose event is not available in the data; At index 962 - the new event adds a new buy order at depth 0 but the new price is lower than the already present best bid. There are multiple examples of this in the dataset. These have been ignored for the purposes of this task.
+* Book state inconsistencies below. There are multiple examples of this in the dataset. These have been ignored for the purposes of this task.
+  * At index 7 - A new order at book level 1 should push down the other levels, however, the price at level 2 was removed instead of appearing at level 3
+  * At index 267 - a new best bid level was added whose event is not available in the data
+  * At index 962 - the new event adds a new buy order at depth 0 but the new price is lower than the already present best bid
 * Action T (Trade) likely indicates IOC orders. Side N probably indicates the order did not reach the book (e.g., rejected or expired).
 * When a trade event is successful, it sometimes (mostly in cases where the entire order is fulfilled) appears as two different rows having the same sequence number, the second row being cancel event to remove the traded volume.
 * There are three instances of 'Add' event on 'N' side which behave like 'Add' event on 'Ask' side. Calculations are done using this assumption.
