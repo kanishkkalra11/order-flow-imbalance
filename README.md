@@ -15,7 +15,7 @@ All features are aggregated over non-overlapping 1-minute windows.<br>
 python get_ofi.py
 ```
 Input: See first_25000_rows.csv.<br>
-Output: ofi_features.csv containing OFI features per 1-minute interval. (See ofi_features.csv)
+Output: ofi_features.csv containing OFI features per 1-minute interval. (See ofi_features.csv)<br>
 Dependencies: See requirements.txt for necessary packages
 
 <h3>Data Exploration and Assumptions</h3>
