@@ -23,9 +23,9 @@ def compute_order_flow(df, levels):
         px_a_prev, sz_a_prev = np.roll(px_a, 1), np.roll(sz_a, 1)
 
         of_b = np.where(px_b > px_b_prev, sz_b,
-               np.where(px_b == px_b_prev, sz_b - sz_b_prev, -sz_b))
+               np.where(px_b == px_b_prev, sz_b - sz_b_prev, -sz_b_prev))
         of_a = np.where(px_a > px_a_prev, -sz_a,
-               np.where(px_a == px_a_prev, sz_a - sz_a_prev, sz_a))
+               np.where(px_a == px_a_prev, sz_a - sz_a_prev, sz_a_prev))
         of_b[0], of_a[0] = 0, 0  # Invalidate first row
 
         of_bid.append(of_b)
